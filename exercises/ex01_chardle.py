@@ -10,7 +10,6 @@ single_character: str = input("Enter a single Character: ")
 if len(single_character) != 1:
     exit("Error: Character must be a single character.")
 character_counter: int = 0
-
 print("searching for " + single_character + " in " + five_character_word)
 if five_character_word[0] == single_character:
     print(single_character + " found at index 0")
