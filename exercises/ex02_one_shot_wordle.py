@@ -7,7 +7,7 @@ secret_word: str = "python"
 guess_word: str = input(f"What is your {len(secret_word)}- letters guess? ")
 
 while len(guess_word) != len(secret_word):
-    guess_word: str = input(f"That was not {len(secret_word)}-letters! Try again: ")
+    guess_word = input(f"That was not {len(secret_word)}-letters! Try again: ")
 
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
@@ -26,7 +26,7 @@ while i < len(secret_word):
         idx: int = 0
         while not track_characters and idx < len(secret_word):
             if matching_indices == secret_word[idx]: 
-                track_characters: bool = True 
+                track_characters = True 
             idx += 1
         if track_characters: 
             emoji_storage += yellow_box
