@@ -14,3 +14,5 @@ elif response == 2:
     print("Ask again later ")
 else:
     print("No way. Not a chance. ")
+
+print("Hello\nworld\n!!!")
