@@ -3,7 +3,7 @@
 __author__ = "730484878"
 
 
-secret_word: str = "Python"
+secret_word: str = "lenoir"
 guess_word: str = input(f"What is your {len(secret_word)}- letters guess? ")
 # Initiates guess word and secret word. 
 while len(guess_word) != len(secret_word):
