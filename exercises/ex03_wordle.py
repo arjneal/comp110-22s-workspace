@@ -1,7 +1,8 @@
 """Structured Wordle Game."""
 
 
-_author_ = "730484878"
+__author__ = "730484878"
+
 
 i = 0
 
@@ -47,31 +48,33 @@ def emojified(guess: str, secret: str) -> str:
 # The string holder variable is returned that way it contains every box on the same line. 
 
 
-def input_guess(guess_length: int) -> str:
+def input_guess(guess_length: int) -> str: 
     """Determines if the guess is the correct character length."""
-    guess_word: str = input(f"Enter a {guess_length} letter word.")
-    while len(guess_word) != guess_length:
-        guess_word: str = input(f"That wasn't {guess_length} chars! Try again: ")
-    # If the guess_word is not equal to the length of the guess then it runs a loop until that condition is no longer false. 
-    return guess_word  
+    user_word: str = input("Enter a " + str(guess_length) + " character word: ")
+    while len(user_word) != guess_length:
+        user_word = input("That wasn't " + str(guess_length) + " chars! Try again: ")
+    return user_word  
 
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     guess_attempts: int = 1
-    # Initialized to 1 instead of 0 because Human numbering starts with 1's not 0's.
     won: bool = False
-    secret_word: str = "codes"
+    secret_word: str = "dhruv"
     while guess_attempts < 7 and not won: 
-        print(f"=== Turn {guess_attempts}/ 6 ===")
-        guess_word = input_guess(len(secret_word))
+        print(f"=== Turn {guess_attempts}/6 ===")
+        guess_word: str = input_guess(len(secret_word))
         print(emojified(guess_word, secret_word)) 
         if guess_word == secret_word:
             print(f"You won in {guess_attempts}/6 turns") 
-            won = True
+            won = True 
         guess_attempts += 1
-    if not won:
+    if not won or guess_attempts > 7:
         print("X/6- Sorry, try again tomorrow!")
 # Won variable is initialized to False within the while loop condition it is changed to True (not False) the while loop will stop running if either one of the statements becomes False
 # For example, if guess attempts is greater than or equal to 7 then the function would stop running because the rhs would be False- False and True (not won) would not evaluate to True. 
 # Once the while loop ONLY reaches the condition of False on the (rhs) and stops running then the last line of code print(X/6- Sorry Try Again would print). This is because the user has reached the maximum amount of attempts and still has yet to guess the correct word. 
+
+
+if __name__ == "__main__":
+    main()
