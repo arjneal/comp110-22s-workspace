@@ -1,9 +1,10 @@
-__author__ = "730484878"
-
 """Collection of unit functions that implement lists."""
 
+__author__ = "730484878"
 
 # Only_Evens states that given a list of numbers if it is divisble by 2 add it to the list even_numbers and return that list. 
+
+
 def only_evens(a: list[int]) -> list[int]:
     """Return all the even numbers."""
     i: int = 0
