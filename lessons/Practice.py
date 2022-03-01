@@ -1,4 +1,2 @@
-print("Hello\nworld\n!!!")
-
-
+"""Practice for quizzes etc."""
 
