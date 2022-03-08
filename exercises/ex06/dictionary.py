@@ -7,6 +7,8 @@ def invert(a: dict[str, str]) -> dict[str, str]:
     """Given a dictionary of strings inverts the original function."""
     invert_a: dict[str, str] = dict()
     for key in a:
+        if a[key] in invert_a:
+            raise KeyError("Duplicate Keys.")
         invert_a[a[key]] = key
     return invert_a
 
@@ -25,13 +27,14 @@ def favorite_color(og_dict: dict[str, str]) -> str:
     ctr_variable: int = 0
     for color in color_dict: 
         if color_dict[color] > ctr_variable:
-            color_dict[color] = ctr_variable
+            ctr_variable = color_dict[color]
             highest_color = color 
     return highest_color 
     # returns the highest_color.
 
 
 def count(value_list: list[str]) -> dict[str, int]:
+    """Counts all the values in a list and returns them as key values in a dictionary."""
     result_dict: dict[str, int] = {} 
     for index in value_list:
         if index in result_dict:

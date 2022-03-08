@@ -3,12 +3,20 @@
 __author__ = "730484878"
 
 from dictionary import invert, favorite_color, count
+import pytest
 
 
 def test_empty_dict_invert() -> None:
     """Given an empty dictionary test to see output of invert."""
     empty_dict: dict[str, str] = {}
     assert invert(empty_dict) == {} 
+
+
+def test_key_error_invert() -> None:
+    """Tests to see if key error is raised."""
+    with pytest.raises(KeyError):
+        my_dictionary = {'kris': 'jordan', 'michael': 'jordan'}
+        invert(my_dictionary)
 
 
 def test_invert_use_case() -> None:
