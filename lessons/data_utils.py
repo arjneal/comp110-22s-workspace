@@ -5,6 +5,7 @@ from csv import DictReader
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
     """Read the rows of a csv into a 'table'."""
+    # Returns a list of the rows. 
     result: list[dict[str, str]] = [] 
 
     # Open a handle to the data file
@@ -25,7 +26,7 @@ def read_csv_rows(filename: str) -> list[dict[str, str]]:
 
 
 def column_values(table: list[dict[str, str]], column: str) -> list[str]:
-    """Produce a list[str] of all values ina single column."""
+    """Produce a list[str] of all values in a single column."""
     result: list[str] = [] 
     for row in table: 
         item: str = row[column]
