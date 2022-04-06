@@ -1,6 +1,8 @@
 """Example of a Point Class."""
 # From CL19
 
+from __future__ import annotations
+
 
 class Point:
     x: float
@@ -19,6 +21,11 @@ class Point:
         """Overload the multiplication operator for Point * float."""
         return Point(self.x * factor, self.y * factor)
     
+    def __add__(self, rhs: Point) -> Point:
+        """Add two points together."""
+        print("__add__ was called.")
+        return Point(self.x + rhs.x, self.y + rhs.y)
+
     def __getitem__(self, index: int) -> float:
         """Allows us to index a float."""
         if index == 0:
