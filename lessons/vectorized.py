@@ -31,8 +31,7 @@ class StrArray:
                 result.append(self.items[i] + " " + rhs.items[i])
                 # Using the same iterating variable that way adding 'Armando' to 'Bacot' etc.  
         return StrArray(result)
-
-        
+     
 
 first: StrArray = StrArray(["Armando", "Brady", "Caleb"])
 last: StrArray = StrArray(["Bacot", "Manek", "Love"])
